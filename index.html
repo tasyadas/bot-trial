@@ -8,7 +8,8 @@
 </head>
 
 <body class="chat-open">
-
+    <button type="button" onClick={window.showBot}>Click to show</button>
+    <button type="button" onClick={window.hideBot}>Click to hide</button>
     <script type="text/javascript">
         function runChatbot() {
             const bot_id = "x1670310721002"
@@ -47,6 +48,14 @@
             }
         }
         runChatbot()
+        function showBot() {
+          window.YellowMessengerPlugin.show()
+        }
+
+        function hideBot() {
+          window.YellowMessengerPlugin.closeBot()
+          window.YellowMessengerPlugin.hide()
+        }
         setTimeout(() => {
             // window.YellowMessengerPlugin.init({
             //     ymAuthenticationToken: 'eGrianoABC123'

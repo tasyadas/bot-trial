@@ -21,7 +21,8 @@
                     "user_id_flip": "",
                 }
             }; (function () { var w = window, ic = w.YellowMessenger; if ("function" === typeof ic) ic("reattach_activator"), ic("update", ymConfig); else { var d = document, i = function () { i.c(arguments) }; function l() { var e = d.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://cdn.yellowmessenger.com/plugin/widget-v2/latest/dist/main.min.js"; var t = d.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t) } i.q = [], i.c = function (e) { i.q.push(e) }, w.YellowMessenger = i, w.attachEvent ? w.attachEvent("onload", l) : w.addEventListener("load", l, !1) } })();
-
+            const frame = document.getElementById('ymIframe');
+            frame.contentWindow.postMessage("*", 'https://cdn.yellowmessenger.com');
             window.addEventListener('message', function (eventData) {
                 eventData = JSON.parse(eventData.data)
                 console.log(eventData, "eventData"); //Check incoming eventData
